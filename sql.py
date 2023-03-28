@@ -6,10 +6,18 @@ import os
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Unir el directorio base con el nombre del archivo de la base de datos
-db_path = os.path.join(base_dir, 'mi_base_de_datos.db')
+db_path = os.path.join(base_dir, 'delegations.db')
+
+
+
+
+
+
 
 def init_db():
-    conn = sqlite3.connect('delegations.db')
+    conn = sqlite3.connect("delegations.db",
+                     detect_types=sqlite3.PARSE_DECLTYPES)
+
     cursor = conn.cursor()
 
     cursor.execute('''CREATE TABLE IF NOT EXISTS delegations
@@ -23,7 +31,9 @@ def init_db():
 
 
 def save_max_op_count(value):
-    conn = sqlite3.connect('delegations.db')
+    conn = sqlite3.connect("delegations.db",
+                     detect_types=sqlite3.PARSE_DECLTYPES)
+
     cursor = conn.cursor()
 
     cursor.execute('''INSERT OR REPLACE INTO max_op_count VALUES (?, ?)''', (1, value))
@@ -33,7 +43,9 @@ def save_max_op_count(value):
 
 
 def get_saved_max_op_count():
-    conn = sqlite3.connect('delegations.db')
+    conn = sqlite3.connect("delegations.db",
+                     detect_types=sqlite3.PARSE_DECLTYPES)
+
     cursor = conn.cursor()
 
     cursor.execute('''SELECT value FROM max_op_count WHERE id = ?''', (1,))
@@ -48,7 +60,9 @@ def get_saved_max_op_count():
 
 
 def save_results_to_db(results):
-    conn = sqlite3.connect('delegations.db')
+    conn = sqlite3.connect("delegations.db",
+                     detect_types=sqlite3.PARSE_DECLTYPES)
+
     cursor = conn.cursor()
 
     for result in results:
