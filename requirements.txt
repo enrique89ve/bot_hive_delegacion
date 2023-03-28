@@ -1,2 +1,4 @@
 beem==0.24.26
 python_dateutil==2.8.2
+psutil==5.9.0
+pymssql==2.2.4
