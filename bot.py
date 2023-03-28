@@ -61,8 +61,8 @@ def get_hp_delegations(account_name):
 
     
     if stop_value == max_op_count:
-        #print(f"No hay nada que ejectutar {account_name}.")
-        #return []
+        print(f"No hay nada que ejectutar {account_name}.")
+        return []
 
 
     results = {}
