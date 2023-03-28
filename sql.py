@@ -1,6 +1,12 @@
 import sqlite3
 from dateutil.parser import parse
+import os
 
+# Obtener el directorio base del archivo actual
+base_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Unir el directorio base con el nombre del archivo de la base de datos
+db_path = os.path.join(base_dir, 'mi_base_de_datos.db')
 
 def init_db():
     conn = sqlite3.connect('delegations.db')

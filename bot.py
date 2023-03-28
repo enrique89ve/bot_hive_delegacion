@@ -3,7 +3,6 @@ import json
 from beem import Hive
 from beem.account import Account
 from beem.instance import set_shared_blockchain_instance
-import sqlite3
 from datetime import datetime, timedelta
 from dateutil.parser import parse
 from sql import save_max_op_count,  get_saved_max_op_count, save_results_to_db
@@ -62,8 +61,8 @@ def get_hp_delegations(account_name):
 
     
     if stop_value == max_op_count:
-        print(f"No hay nada que ejectutar {account_name}.")
-        return []
+        #print(f"No hay nada que ejectutar {account_name}.")
+        #return []
 
 
     results = {}
